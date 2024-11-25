@@ -1,0 +1,140 @@
+.footer {
+  width: 100%;
+  background-color: rgb(48, 46, 54);
+  color: white;
+  padding: 60px 90px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.footerSection {
+  width: 30%;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.titleSection {
+  font-size: 1.2rem;
+}
+
+.contactRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon {
+  font-size: 1.2rem;
+}
+
+.boxSocialNetworks {
+  margin-top: 5px;
+}
+
+.informationSection > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.bookComplaintsBook {
+  width: 100%;
+  height: 45px;
+  padding-left: 30%;
+}
+
+.bookComplaintsBook > img {
+  height: 100%;
+  cursor: pointer;
+}
+
+.boxInputSubscribe {
+  width: 75%;
+  height: 40px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputSubscribe {
+  width: 100%;
+  height: 100%;
+  font-size: 0.95rem;
+  outline: none;
+  padding: 0 12px;
+  border: none;
+}
+
+.buttonSubscribe {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 100px;
+  border: none;
+  background-color: rgb(68, 68, 68);
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.buttonSubscribe:hover {
+  background-color: rgb(42, 42, 42);
+}
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+  .boxInputSubscribe {
+    width: 90%;
+  }
+}
+
+@media (min-width: 920px) and (max-width: 1199px) {
+  .footer {
+    padding: 60px 60px;
+  }
+
+  .boxInputSubscribe {
+    width: 100%;
+  }
+}
+
+@media (min-width: 660px) and (max-width: 919px) {
+  .footer {
+    padding: 60px 60px;
+    justify-content: center;
+    gap: 40px 25px;
+  }
+
+  .footerSection:first-child,
+  .footerSection:nth-child(2) {
+    width: 45%;
+  }
+
+  .footerSection:last-child {
+    width: 80%;
+  }
+
+  .boxInputSubscribe {
+    width: 100%;
+  }
+}
+
+@media (max-width: 659px) {
+  .footer {
+    padding: 60px 60px;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .footerSection {
+    width: 100%;
+  }
+
+  .boxInputSubscribe {
+    width: 100%;
+  }
+}

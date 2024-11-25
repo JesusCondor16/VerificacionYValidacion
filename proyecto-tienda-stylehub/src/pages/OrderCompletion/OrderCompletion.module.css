@@ -1,0 +1,186 @@
+.orderCompletionBox {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+}
+
+.orderCompletionBox > * {
+  width: 50%;
+}
+
+.orderCompletionDataBox {
+  padding: 60px 70px 50px 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.storeName {
+  width: 100%;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.thankyouBox {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.checkIcon {
+  font-size: 2.3rem;
+  color: var(--success-color);
+}
+
+.orderReservedBox {
+  border: 1px solid var(--light-gray);
+  border-radius: 7px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.paymentMethodDataBox,
+.sectionOrderDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.orderDetailsBox {
+  border: 1px solid var(--light-gray);
+  border-radius: 7px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.orderDetailsDataBox {
+  display: flex;
+  gap: clamp(15px, 50%, 90px);
+  flex-wrap: wrap;
+}
+
+.orderDetailsDataBox > div {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.finalOptionsBox {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.helpLink {
+  color: black;
+  font-size: 0.95rem;
+}
+
+.backButton {
+  background-color: black;
+  color: white;
+
+  text-align: center;
+  align-content: center;
+  padding: 10px 15px;
+  height: 55px;
+
+  width: 35%;
+  min-width: 190px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.orderSummaryBox {
+  background-color: var(--very-light-gray);
+  padding: 60px 10% 50px 70px;
+}
+
+@media (min-width: 1250px) and (max-width: 1480px) {
+  .orderCompletionDataBox {
+    padding: 50px 70px 50px 8%;
+  }
+
+  .orderSummaryBox {
+    padding: 50px 8% 50px 70px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1249px) {
+  .orderCompletionBox {
+    flex-direction: column;
+  }
+
+  .orderCompletionBox > * {
+    width: 100%;
+  }
+
+  .orderCompletionDataBox {
+    padding: 50px 12%;
+  }
+
+  .orderSummaryBox {
+    padding: 50px 12%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .orderCompletionBox {
+    flex-direction: column;
+  }
+
+  .orderCompletionBox > * {
+    width: 100%;
+  }
+
+  .orderCompletionDataBox {
+    padding: 50px 12%;
+  }
+
+  .orderSummaryBox {
+    padding: 50px 12%;
+  }
+}
+
+@media (min-width: 546px) and (max-width: 767px) {
+  .orderCompletionBox {
+    flex-direction: column;
+  }
+
+  .orderCompletionBox > * {
+    width: 100%;
+  }
+
+  .orderCompletionDataBox {
+    padding: 50px 12%;
+  }
+
+  .orderSummaryBox {
+    padding: 50px 12%;
+  }
+}
+
+@media (max-width: 545px) {
+  .orderCompletionBox {
+    flex-direction: column;
+  }
+
+  .orderCompletionBox > * {
+    width: 100%;
+  }
+
+  .orderCompletionDataBox {
+    padding: 50px 12%;
+  }
+
+  .orderSummaryBox {
+    padding: 50px 12%;
+  }
+}

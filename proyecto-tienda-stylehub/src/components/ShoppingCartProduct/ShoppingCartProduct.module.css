@@ -1,0 +1,111 @@
+.boxProduct {
+  width: 100%;
+  display: flex;
+  padding: 0 20px;
+  height: 120px;
+  align-items: center;
+  border-bottom: 1px solid rgb(220, 220, 220);
+  gap: 10px;
+}
+
+.boxImage {
+  width: 25%;
+  height: 70%;
+  text-align: center;
+  align-content: center;
+  overflow: hidden;
+}
+
+.boxImage > img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.heightClothing {
+  height: 70%;
+}
+
+.heightElectronics {
+  height: 50%;
+}
+
+.heightJawelery {
+  height: 40%;
+}
+
+.boxProductData {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.firstRowProductData {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.productName {
+  width: 90%;
+  font-size: 1rem;
+}
+
+.removeProduct {
+  color: rgb(241, 24, 24);
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.removeProduct:hover {
+  color: rgb(214, 20, 20);
+}
+
+.lastRowProductData {
+  display: flex;
+  justify-content: space-between;
+}
+
+.lastRowProductData > * {
+  align-content: center;
+}
+
+.boxProductOptions {
+  display: flex;
+  border: 1px solid rgb(220, 220, 220);
+}
+
+.boxProductOptions > * {
+  width: 23px;
+  height: 23px;
+  text-align: center;
+  align-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quantityProduct {
+  border-left: 1px solid rgb(220, 220, 220);
+  border-right: 1px solid rgb(220, 220, 220);
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.boxProductOptions > button {
+  font-size: 1.3rem;
+  padding-bottom: 2px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.boxProductOptions > button:hover {
+  background-color: #f6f6f6;
+}
+
+.totalPrice {
+  font-weight: bold;
+}

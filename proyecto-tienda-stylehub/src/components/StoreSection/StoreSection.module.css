@@ -1,0 +1,48 @@
+.boxStoreSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  position: relative;
+  min-height: 500px;
+}
+
+.boxProducts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 45px 35px;
+}
+
+.sectionTitle {
+  text-align: center;
+  z-index: 1;
+  font-size: 3rem;
+}
+
+.backgroundImage {
+  height: 500px;
+  opacity: 0.1;
+  position: absolute;
+}
+
+@media (min-width: 515px) and (max-width: 634px) {
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
+
+  .backgroundImage {
+    height: 380px;
+  }
+}
+
+@media (max-width: 514px) {
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
+
+  .backgroundImage {
+    height: 330px;
+  }
+}

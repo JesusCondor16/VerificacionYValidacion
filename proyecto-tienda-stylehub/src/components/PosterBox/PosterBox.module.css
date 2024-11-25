@@ -1,0 +1,283 @@
+.boxPoster {
+  width: 100%;
+  height: 630px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.boxPoster > * {
+  width: 50%;
+  height: 100%;
+}
+
+.boxImage {
+  width: 100%;
+  height: 100%;
+}
+
+.posterImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.boxBenefits {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 50px 80px;
+  background-color: rgb(48, 46, 54);
+  color: white;
+}
+
+.boxIntroduction {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.boxIntroduction > h3 {
+  font-size: 2rem;
+}
+
+.boxIntroduction > p {
+  font-size: 1.3rem;
+}
+
+.benefitsList {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-left: 90px;
+  overflow: hidden;
+}
+
+.benefit {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.benefitIcon {
+  font-size: 2.2rem;
+  color: white;
+}
+
+.benefit > p {
+  font-size: 1.2rem;
+}
+
+@media (min-width: 1200px) and (max-width: 1599px) {
+  .boxBenefits {
+    padding: 40px 70px;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .benefitsList {
+    padding-left: 70px;
+  }
+
+  .boxIntroduction > h3 {
+    font-size: 1.8rem;
+  }
+
+  .boxIntroduction > p {
+    font-size: 1.15rem;
+  }
+
+  .benefitIcon {
+    font-size: 2rem;
+  }
+
+  .benefit > p {
+    font-size: 1.15rem;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .boxBenefits {
+    padding: 40px 60px;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .benefitsList {
+    padding-left: 60px;
+  }
+
+  .boxIntroduction > h3 {
+    font-size: 1.8rem;
+  }
+
+  .boxIntroduction > p {
+    font-size: 1.1rem;
+  }
+
+  .benefitIcon {
+    font-size: 2rem;
+  }
+
+  .benefit > p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .boxPoster {
+    height: auto;
+  }
+
+  .boxPoster > * {
+    width: 100%;
+    height: 560px;
+  }
+
+  .boxBenefits {
+    padding: 40px 60px;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .benefitsList {
+    padding-left: 60px;
+  }
+
+  .boxIntroduction > h3 {
+    font-size: 1.8rem;
+  }
+
+  .boxIntroduction > p {
+    font-size: 1.15rem;
+  }
+
+  .benefitIcon {
+    font-size: 2rem;
+  }
+
+  .benefit > p {
+    font-size: 1.15rem;
+  }
+}
+
+@media (min-width: 635px) and (max-width: 767px) {
+  .boxPoster {
+    height: auto;
+  }
+
+  .boxPoster > * {
+    width: 100%;
+    height: 560px;
+  }
+
+  .boxBenefits {
+    padding: 40px 60px;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .benefitsList {
+    padding-left: 60px;
+  }
+
+  .boxIntroduction > h3 {
+    font-size: 1.8rem;
+  }
+
+  .boxIntroduction > p {
+    font-size: 1.1rem;
+  }
+
+  .benefitIcon {
+    font-size: 2rem;
+  }
+
+  .benefit > p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 515px) and (max-width: 634px) {
+  .boxPoster {
+    height: auto;
+  }
+
+  .boxPoster > * {
+    width: 100%;
+    height: 500px;
+  }
+
+  .boxBenefits {
+    padding: 35px 40px;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .benefitsList {
+    padding-left: 40px;
+    gap: 25px;
+  }
+
+  .boxIntroduction > h3 {
+    font-size: 1.6rem;
+  }
+
+  .boxIntroduction > p {
+    font-size: 1rem;
+  }
+
+  .benefitIcon {
+    font-size: 1.8rem;
+  }
+
+  .benefit {
+    gap: 20px;
+  }
+
+  .benefit > p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 514px) {
+  .boxPoster {
+    height: auto;
+  }
+
+  .boxPoster > * {
+    width: 100%;
+    height: 520px;
+  }
+
+  .boxBenefits {
+    padding: 35px 40px;
+    justify-content: center;
+    gap: 30px;
+    height: auto;
+  }
+
+  .benefitsList {
+    padding-left: 40px;
+    gap: 25px;
+  }
+
+  .boxIntroduction > h3 {
+    font-size: 1.5rem;
+  }
+
+  .boxIntroduction > p {
+    font-size: 1rem;
+  }
+
+  .benefitIcon {
+    font-size: 1.8rem;
+  }
+
+  .benefit {
+    gap: 20px;
+  }
+
+  .benefit > p {
+    font-size: 1rem;
+  }
+}

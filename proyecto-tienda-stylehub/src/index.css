@@ -1,0 +1,30 @@
+:root {
+  --error-color: #e74c3c;
+  --success-color: #2ecc71;
+  --light-gray: #919191;
+  --very-light-gray: #efefef;
+  --color-disabled: rgb(97, 97, 97);
+  --background-very-light-gray: #f6f6f6;
+  --font-family-roboto: "Roboto", sans-serif;
+  --font-family-poppins: "Poppins", serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Overlock", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+ul {
+  list-style-type: none;
+}

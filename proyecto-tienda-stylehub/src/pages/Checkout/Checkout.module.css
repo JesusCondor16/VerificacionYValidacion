@@ -1,0 +1,207 @@
+.boxTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  margin-bottom: 35px;
+  position: relative;
+}
+
+.title {
+  width: 100%;
+  font-size: 3.5rem;
+  font-weight: normal;
+  text-shadow: -3px 0px 7px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.backButton {
+  font-size: 1.8rem;
+  position: absolute;
+  left: 0;
+  cursor: pointer;
+}
+
+.checkoutBox {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+}
+
+.checkoutBox > * {
+  width: 50%;
+}
+
+.orderFormBox {
+  padding: 50px 70px 50px 12%;
+}
+
+.orderForm {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.orderForm > * {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sectionTitle {
+  font-size: 1.65rem;
+}
+
+.namesBox,
+.locationsBox {
+  display: flex;
+  gap: 12px;
+}
+
+.finalizeOrderButton {
+  text-align: center;
+  align-content: center;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  height: 50px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.storeBranchBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.storeBranchDataBox {
+  border: 1px solid black;
+  border-radius: 6px;
+  padding: 15px 17px;
+  background-color: var(--background-very-light-gray);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.storeBranchData {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.storeBranchAddress {
+  font-size: 0.9rem;
+}
+
+.orderSummaryBox {
+  background-color: var(--very-light-gray);
+  padding: 50px 12% 50px 70px;
+}
+
+@media (min-width: 1250px) and (max-width: 1480px) {
+  .orderFormBox {
+    padding: 50px 70px 50px 8%;
+  }
+
+  .orderSummaryBox {
+    padding: 50px 8% 50px 70px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1249px) {
+  .checkoutBox {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .checkoutBox > * {
+    width: 100%;
+  }
+
+  .orderFormBox {
+    padding: 50px 12%;
+  }
+
+  .orderSummaryBox {
+    padding: 50px 12%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .checkoutBox {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .checkoutBox > * {
+    width: 100%;
+  }
+
+  .orderFormBox {
+    padding: 50px 12%;
+  }
+
+  .orderSummaryBox {
+    padding: 50px 12%;
+  }
+}
+
+@media (min-width: 546px) and (max-width: 767px) {
+  .checkoutBox {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .checkoutBox > * {
+    width: 100%;
+  }
+
+  .orderFormBox {
+    padding: 50px 12%;
+  }
+
+  .orderSummaryBox {
+    padding: 50px 12%;
+  }
+}
+
+@media (max-width: 545px) {
+  .boxTitle {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .backButton {
+    position: static;
+  }
+
+  .checkoutBox {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .checkoutBox > * {
+    width: 100%;
+  }
+
+  .orderFormBox {
+    padding: 40px 12% 50px;
+  }
+
+  .orderSummaryBox {
+    padding: 50px 12%;
+  }
+}

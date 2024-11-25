@@ -1,0 +1,39 @@
+.boxHome {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.boxHome > * {
+  width: 100%;
+}
+
+.boxSections {
+  width: 100%;
+  padding: 40px 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+
+@media (min-width: 635px) and (max-width: 767px) {
+  .boxSections {
+    padding: 10px 40px 30px;
+  }
+}
+
+@media (min-width: 515px) and (max-width: 634px) {
+  .boxSections {
+    padding: 10px 40px 30px;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 514px) {
+  .boxSections {
+    padding: 10px 40px 30px;
+    gap: 50px;
+  }
+}
