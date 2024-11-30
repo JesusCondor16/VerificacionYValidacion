@@ -1,3 +1,6 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 // PUERTO DEL SERVIDOR
 export const PORT = process.env.PORT ?? 1234;
 
