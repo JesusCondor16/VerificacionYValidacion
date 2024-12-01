@@ -1,4 +1,3 @@
-
 ## Pruebas Funcionales
 Las pruebas funcionales realizadas validan dos aspectos clave del sistema:
 
@@ -64,3 +63,49 @@ Resumen de las Pruebas Funcionales
 | **Manejo del evento preventDefault**    | Garantiza que la página no se recargue al enviar el formulario.                                            | `event.preventDefault` debe ser llamado correctamente.                                                    | ✔️        |
 | **Manejo de modal de validación**       | Asegura que el modal se muestre con el mensaje correcto cuando los datos son inválidos.                    | Se muestra un modal con el título "Error en el ingreso de datos" y un mensaje descriptivo.                | ✔️        |
 
+Pipeline script:
+pipeline {
+    agent any
+
+    environment {
+        NODEJS_HOME = '/usr/local/bin/node' // Cambia según tu instalación de Node.js
+        PATH = "${NODEJS_HOME}:${env.PATH}"
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                script {
+                    // Clona desde un repositorio o accede directamente al directorio
+                    dir('INGRESA AQUI LA DIREECIÓN DEL PROYECTO') {
+                        echo 'Using project from local directory...'
+                    }
+                }
+            }
+        }
+        stage('Run Tests') {
+            steps {
+                script {
+                    dir('INGRESA AQUI LA DIREECIÓN DEL PROYECTO') {
+                        sh 'npm test'
+                    }
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline finished.'
+        }
+        success {
+            echo 'Tests passed!'
+        }
+        failure {
+            echo 'Tests failed.'
+        }
+    }
+}
+En caso de realizar todo correctamente en "Stages" de Jenkins se debería visualizar lo siguiente:
+
+![Imagen de WhatsApp 2024-11-30 a las 21 46 47_0bf42be7](https://github.com/user-attachments/assets/2caeb564-edc7-4f29-902d-5db7071c0d1e)
