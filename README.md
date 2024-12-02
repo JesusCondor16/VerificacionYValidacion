@@ -205,7 +205,7 @@ agent any
 ![alt text](image.png)
 ejecución:
 ![alt text](image-1.png)
-Informe: ZAP-Report.html
+Informe: report.html
 Se incluyeron los siguientes sitios:
 
 http://localhost:5173
