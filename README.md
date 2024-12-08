@@ -185,73 +185,59 @@ pipeline {
 
 ## Pruebas Funcionales
 
-Las pruebas funcionales realizadas validan dos aspectos clave del sistema:
+Este documento explica paso a paso cómo ejecutar un test funcional utilizando Selenium WebDriver en Node.js. Además, se proporciona una tabla de verificación para documentar el estado de las funcionalidades probadas.
 
-1. Envío de datos correctos al backend (TestCase2.test.jsx)
-2. Validación de datos incompletos o inválidos en el formulario de pago (TestCase3.test.jsx)
+### Descripción del Test
 
-### 1. Envío de datos correctos al backend
+El test funcional PFCompras.spec.cjs tiene como objetivo validar las interacciones principales de un usuario con la plataforma web de la tienda, desde la navegación inicial hasta la finalización de una compra exitosa. Este test asegura que los elementos clave de la interfaz funcionen según lo esperado.
 
-Archivo de testeo: TestCase2.test.jsx
+### Pasos de Prueba
 
-Descripción:
+1. Navegar a la página principal del sitio web.
+2. Añadir múltiples productos de diferentes categorías al carrito de compras.
+3. Completar el formulario de compra con datos válidos.
+4. Confirmar la compra.
+5. Verificar la redirección a la página de confirmación de compra.
+6. Validar que se muestren errores adecuados al ingresar datos inválidos en el formulario.
 
-Esta prueba asegura que los datos del formulario de checkout, cuando son válidos, se envíen correctamente al backend utilizando el método postPaymentPaypal.
+### Objetivo
 
-Pasos de la prueba:
+Garantizar que:
 
--Simular el envío de un formulario con datos válidos.
++ La funcionalidad de navegación, selección de productos, y finalización de la compra está operativa.
 
--Verificar que la función preventDefault del evento fue llamada para evitar la recarga de la página.
++ Los errores se manejan correctamente en caso de entradas no válidas.
 
--Validar que los datos fueron enviados correctamente al endpoint /payment/create-order del servidor con la estructura esperada.
++ La experiencia del usuario es consistente y sin interrupciones.
 
-Objetivo:
+### Instalación
 
--Garantizar que el sistema pueda procesar pedidos y enviar datos correctos al backend.
+* Node.js instalado: Asegúrate de tener Node.js instalado en tu máquina. Puedes verificarlo con el comando node -v.
 
-Código clave:
-expect(postPaymentPaypal).toHaveBeenCalledWith(
-`${URL_SERVER}/payment/create-order`,
-{
-productList: [ { name: "producto1" }, { name: "producto2" } ],
-checkoutData: validCheckoutData,
-}
-);
+* Google Chrome: Instalado y actualizado.
 
-### 2. Validación de datos incompletos o inválidos en el formulario de pago
+* Chromedriver: Debe ser compatible con tu versión de Chrome.
 
-Archivo de testeo: TestCase3.test.jsx
+* Selenium WebDriver: Instalado como una dependencia en tu proyecto.
 
-Descripción:
-Esta prueba verifica que el sistema no permita el procesamiento de pagos si los datos ingresados en el formulario son inválidos o incompletos.
-
-Pasos de la prueba:
-
--Simular el envío de un formulario con datos inválidos (como un email mal formado o un número de DNI no válido).
--Verificar que se muestre un modal de error con un mensaje descriptivo.
--Comprobar que la función checkoutValidationsModal sea llamada con los parámetros correctos.
-
-Objetivo:
-Evitar que el sistema procese pagos con datos incorrectos, garantizando la integridad y seguridad de las transacciones.
-
-Código clave:
-
-expect(checkoutValidationsModal).toHaveBeenCalledWith({title: "Error en el ingreso de datos", text: "Por favor, complete correctamente todos los campos.", icon: "warning", confirmButtonColor: "black",});
-
-Resumen de las Pruebas Funcionales
+### Resumen de las Pruebas Funcionales
 
 | **Función Probada**                   | **Descripción**                                                                                              | **Resultado Esperado**                                                                                       | **CHECK** |
 | ------------------------------------- | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | --------- |
-| **Envío de datos al backend**         | Verifica que los datos válidos del formulario se envíen correctamente al backend usando `postPaymentPaypal`. | Los datos enviados deben coincidir con la estructura esperada y ser recibidos correctamente por el servidor. | ✔️        |
-| **Validación de email**               | Asegura que el campo de email solo acepte direcciones con formato válido.                                    | Muestra un modal de error si el email no es válido.                                                          | ✔️        |
-| **Validación de DNI**                 | Comprueba que el DNI tenga un formato válido (solo números).                                                 | Muestra un modal de error si el DNI contiene letras o tiene una longitud incorrecta.                         | ✔️        |
-| **Validación de teléfono celular**    | Valida que el número de celular tenga un formato válido (9 dígitos).                                         | Muestra un modal de error si el número de celular tiene un formato incorrecto.                               | ✔️        |
+| **Navegación a la página principal**         | Verifica que la aplicación carga correctamente la página principal. | Los datos enviados deben coincidir con la estructura esperada y ser recibidos correctamente por el servidor. | ✔️        |
+| **Selección de productos**               | Asegura que se puede agregar productos al carrito.                                    | Muestra los productos en el carrito                                                          | ✔️        |
+| **Rellenar formulario de compra**                 | Al finalizar de seleccionar los productos debe rellenar los campos de un formulario                                                 | El formulario carga correctamente y muestra en pantalla los productos del carrito.                         | ✔️  
 | **Validación de campos obligatorios** | Verifica que todos los campos obligatorios estén llenos antes de permitir el envío del formulario.           | Muestra un modal de error si algún campo obligatorio está vacío.                                             | ✔️        |
-| **Manejo del evento preventDefault**  | Garantiza que la página no se recargue al enviar el formulario.                                              | `event.preventDefault` debe ser llamado correctamente.                                                       | ✔️        |
-| **Manejo de modal de validación**     | Asegura que el modal se muestre con el mensaje correcto cuando los datos son inválidos.                      | Se muestra un modal con el título "Error en el ingreso de datos" y un mensaje descriptivo.                   | ✔️        |
+| **Recibo de compra** | Al completar el formulario se debe mostrar en pantalla un recibo de compra.           | El recibo se carga correctamente en pantalla mostrando la información de la compra realizada.                                             | ✔️        |
 
-Pipeline script:
+### Selenium IDE:
+![image](https://github.com/user-attachments/assets/21199f30-6454-41b4-b41d-ea852b025636)
+
+### Ejemplo de recibo generado tras la prueba automatizada:
+![image](https://github.com/user-attachments/assets/117fdb48-e595-4c27-a191-0f5bf35b633b)
+
+
+### Pipeline script:
 
     pipeline {
       agent any
@@ -274,8 +260,7 @@ Pipeline script:
           stage('Run Tests') {
               steps {
                   script {
-                      dir('INGRESA AQUI LA DIREECIÓN DEL PROYECTO') {
-                          sh 'npm test'
+                       bat "node ${env.TEST_PATH}\\pbCompras.spec.cjs"
                       }
                   }
               }
