@@ -1,11 +1,13 @@
 ## ⚙️Preparación del entorno
 
-Clonamos el repositorio mediante el siguiente comando:
-
-`git clone https://github.com/JesusCondor16/VerificacionYValidacion.git`
-
 > [!IMPORTANT]
 > Debes tener instalado git en tu sistema
+
+Clonamos el repositorio mediante el siguiente comando:
+
+```
+git clone https://github.com/JesusCondor16/VerificacionYValidacion.git
+```
 
 Prepararemos el entorno mediante la instalación de las librerías para el backend y frontend.
 
