@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./index.js",
-    "dev": "node --env-file .env --watch ./index.js"
+    "dev": "node --env-file .env --watch ./index.js",
+    "build": "node esbuild.js"
   },
   "keywords": [],
   "author": "",
@@ -22,5 +23,8 @@
     "mysql2": "3.11.3",
     "node-cron": "3.0.3",
     "zod": "3.23.8"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0"
   }
 }

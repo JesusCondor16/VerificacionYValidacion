@@ -12,7 +12,7 @@ const getExchangerate = async () => {
   }
 };
 
-const convertPENToUSD = (amount, exchangerate) => {
+const convertPENtoUSD = (amount, exchangerate) => {
   try {
     const amountUSD = amount * exchangerate;
     return amountUSD.toFixed(2);
@@ -30,7 +30,7 @@ export const getCostUSD = async (productList, deliveryOption) => {
       name: product.name,
       unit_amount: {
         currency_code: "USD",
-        value: convertPENToUSD(product.price, exchangerate),
+        value: convertPENtoUSD(product.price, exchangerate),
       },
       quantity: String(product.quantity),
     }));
@@ -40,7 +40,7 @@ export const getCostUSD = async (productList, deliveryOption) => {
         name: "Shipping Cost",
         unit_amount: {
           currency_code: "USD",
-          value: convertPENToUSD(SHIPPING_COST, exchangerate),
+          value: convertPENtoUSD(SHIPPING_COST, exchangerate),
         },
         quantity: String(1),
       });
