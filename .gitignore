@@ -6,6 +6,8 @@ yarn-debug.log*
 yarn-error.log*
 
 # Node.js dependencies
+proyecto-tienda-stylehub/node_modules/
+style-hub-backend/node_modules/
 node_modules/
 package-lock.json
 yarn.lock
