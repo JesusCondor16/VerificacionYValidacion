@@ -183,6 +183,77 @@ pipeline {
 
 ```
 
+## Analisis de SonarQube
+
+SonarQube es una herramienta que nos ayuda a poder analizar el código fuente e identificar problemas relacionados a seguridad y/o buenas practicas de codificación.
+
+
+### Objetivo
+
+Garantizar que:
+
++ Calidad de codigo: En lo que respecta fiabilidad, mantenibilidad y seguridad.
+
++ Conformidad con estándares.
+
++ Prevención de problemas a largo plazo .
+
+### Instalación
+
+* Java instalado: Se puede usar desde el Java version 17. Para comprobar si java esta instalado se puede usar el comando "java -version" en una terminal.
+
+* Google Chrome: Instalado y actualizado.
+
+* Sonarqube: Se debe descargar e instalar en la computadora. 
+
+## Resultados 
+
+| **Metrica Evaluada**                   | **Descripción**                                                                                              | **Resultado **         | 
+| -------------------------------------  | ------------------------------------------------------------------------------------------------------------ | ---------------------- | 
+| **Seguridad**                          | Identifica errores potenciales que podrían causar fallos en la ejecución, mejorando la estabilidad.          |  0                     | 
+| **Fiabilidad**                         |  Analiza la complejidad del código para facilitar futuras modificaciones y correcciones.                     |  91                    | 
+| **Mantenimiento**                      |  Mide la facilidad con la que el código puede ser actualizado o corregido.                                   | 1.1 k                  | 
+| **Hostpost revisado**                  | Marca áreas críticas que necesitan revisión manual por posibles riesgos de seguridad.                        | 0.0%                   | 
+| **Cobertura**                          | Mide el porcentaje de código evaluado por pruebas, asegurando su correcto funcionamiento.                    | 0.0%                   |
+| **Duplicación**                        | Detecta fragmentos de código repetido, ayudando a reducir redundancia y mejorar la calidad.                  | 15.8%                  |
+
+
+### Ejemplo de recibo generado tras la prueba automatizada:
+![image](https://github.com/JesusCondor16/VerificacionYValidacion/blob/65fff934f7363d34450ee3962979dbe7fa414359/Analisis%20SonarQube.jpg)
+
+## Pipeline
+pipeline {
+    agent any
+    environment {
+        SONAR_SCANNER_HOME = tool 'SonarQube Scanner'  // Nombre de la herramienta configurada en Jenkins
+    }
+    stages {
+        stage('Clonar Proyecto') {
+            steps {
+                git branch: 'main', url: 'https://github.com/JesusCondor16/VerificacionYValidacion'
+            }
+        }
+        stage("SonarQube Analysis") {
+            steps {
+                bat """
+                    "%SONAR_SCANNER_HOME%\\bin\\sonar-scanner.bat" ^
+                    -Dsonar.host.url=http://localhost:9000 ^
+                    -Dsonar.token=sqp_e8745cd3a94c801d500c6a31e85fd0cc5b5a8ce3 ^
+                    -Dsonar.projectKey=stylehub ^
+                    -Dsonar.projectName=stylehub ^
+                    -Dsonar.sources=. ^
+                    -Dsonar.exclusions=/node_modules/,/build/** ^
+                    -Dsonar.javascript.lcov.reportPaths=coverage/lcov-report/index.html ^
+                    -Dsonar.html.sourceDirs=src ^
+                    -Dsonar.css.sourceDirs=src ^
+                    -Dsonar.javascript.sourceDirs=src
+                """
+            }
+ }
+}
+}
+
+
 ## Pruebas Funcionales
 
 Este documento explica paso a paso cómo ejecutar un test funcional utilizando Selenium WebDriver en Node.js. Además, se proporciona una tabla de verificación para documentar el estado de las funcionalidades probadas.
@@ -351,6 +422,9 @@ Se debe agregar la direccion del jmeter/bin en variables de entorno para que el 
 El script creara carpetas en el workspace de jenkis donde en JmeterCodigo estara el archivo de jmter para ejecutarlo y en Prueba01 se guardara los logs y el html del resultado de la prueba:
 
 ![image](https://github.com/user-attachments/assets/36393749-1b74-424c-8be1-699a6fe41d5a)
+
+
+
 
 ## Pruebas De seguridad
 
