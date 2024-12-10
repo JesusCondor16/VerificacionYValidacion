@@ -222,16 +222,17 @@ Garantizar que:
 ![image](https://github.com/JesusCondor16/VerificacionYValidacion/blob/65fff934f7363d34450ee3962979dbe7fa414359/Analisis%20SonarQube.jpg)
 
 ## Pipeline
+
 pipeline {
     agent any
     environment {
         SONAR_SCANNER_HOME = tool 'SonarQube Scanner'  // Nombre de la herramienta configurada en Jenkins
-    }
-    stages {
+                }
+    stages {    
         stage('Clonar Proyecto') {
             steps {
                 git branch: 'main', url: 'https://github.com/JesusCondor16/VerificacionYValidacion'
-            }
+                  }
         }
         stage("SonarQube Analysis") {
             steps {
@@ -249,8 +250,8 @@ pipeline {
                     -Dsonar.javascript.sourceDirs=src
                 """
             }
- }
-}
+        }
+    }
 }
 
 
