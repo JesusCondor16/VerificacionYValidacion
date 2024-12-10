@@ -1,15 +1,7 @@
 import request from 'supertest';
 import { app } from '../index.js'; // Importa la instancia de la aplicación
-let server;
 
-beforeAll(() => {
-  // Inicia el servidor antes de las pruebas
-  server = app.listen(1238);  // Puedes usar otro puerto si es necesario
-});
-afterAll(() => {
-  // Cierra el servidor después de las pruebas
-  server.close();
-});
+
 describe("Order Routes", () => {
   test("GET /orders - Debería devolver una lista de órdenes (puede estar vacía)", async () => {
     const response = await request(app).get("/order");
