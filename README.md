@@ -227,6 +227,29 @@ test("GET /product - Debería devolver una lista con productos", async () => {
 
 ```
 
+### Ruta /product/show-quantity/:id
+Verifica que el endpoint devuelva la cantidad de un producto específico.
+```
+test("GET /product/show-quantity/:id - Debería devolver la cantidad de un producto específico", async () => {
+  const response = await request(app).get("/product/show-quantity/9");
+  expect(response.status).toBe(200);
+  expect(response.body).toHaveProperty("showQuantity");
+});
+
+```
+
+### Ruta /product-warehouse
+Verifica que el endpoint devuelva todos los almacenes disponibles.
+```
+test("GET /product-warehouse - Debería devolver todos los almacenes", async () => {
+  const response = await request(app).get("/product-warehouse");
+  expect(response.status).toBe(200);
+  expect(Array.isArray(response.body)).toBe(true);
+});
+
+
+```
+
 ## Analisis de SonarQube
 
 SonarQube es una herramienta que nos ayuda a poder analizar el código fuente e identificar problemas relacionados a seguridad y/o buenas practicas de codificación.
