@@ -182,6 +182,50 @@ pipeline {
 }
 
 ```
+## Pruebas Unitarias
+Las pruebas unitarias implementadas a la aplicación para verificar el correcto funcionamiento de las rutas y controladores.
+
+## Tecnologías Utilizadas
++ Jest: Framework para pruebas de JavaScript.
++ Supertest: Librería para realizar solicitudes HTTP y probar endpoints de aplicaciones.
+
+### Ruta: /order
+Verifica que el endpoint devuelva una lista de órdenes.
+```
+test("GET /order - Debería devolver una lista de órdenes (puede estar vacía)", async () => {
+  const response = await request(app).get("/order");
+  expect(response.status).toBe(200);
+  expect(Array.isArray(response.body)).toBe(true); // Verifica que devuelve un array
+});
+```
+
+### Ruta: /order/:id
+Verifica que el endpoint devuelva los datos de una orden específica.
+Si la orden no existe, debería devolver un código de estado 404.
+```
+test("GET /order/:id - Debería devolver una orden específica", async () => {
+  const response = await request(app).get("/order/2a1b8305-1a98-4546-ac59-30bd4ad3e948");
+
+  if (response.status === 200) {
+    expect(response.body).toHaveProperty("success", true);
+  } else {
+    expect(response.status).toBe(404);
+  }
+});
+
+```
+
+### Ruta /product
+Verifica que el endpoint devuelva una lista de productos.
+Si la orden no existe, debería devolver un código de estado 404.
+```
+test("GET /product - Debería devolver una lista con productos", async () => {
+  const response = await request(app).get("/product");
+  expect(response.status).toBe(200);
+  expect(Array.isArray(response.body)).toBe(true); // Verifica que devuelve un array
+});
+
+```
 
 ## Analisis de SonarQube
 
