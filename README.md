@@ -185,7 +185,7 @@ pipeline {
 ## Pruebas Unitarias
 Las pruebas unitarias implementadas a la aplicación para verificar el correcto funcionamiento de las rutas y controladores.
 
-## Tecnologías Utilizadas
+### Tecnologías Utilizadas
 + Jest: Framework para pruebas de JavaScript.
 + Supertest: Librería para realizar solicitudes HTTP y probar endpoints de aplicaciones.
 
@@ -248,6 +248,19 @@ test("GET /product-warehouse - Debería devolver todos los almacenes", async () 
 });
 
 
+```
+### Ejecución de las pruebas unitarias:
+![image](https://github.com/JesusCondor16/VerificacionYValidacion/blob/ElvisManco/style-hub-backend/unitarias.png)
+
+### Stage del pipeline en Jenkins:
+```
+stage('Run Unit Tests') {
+            steps {
+              dir('style-hub-backend') { 
+                    bat 'npm test'
+                }
+            }
+        }
 ```
 
 ## Analisis de SonarQube
