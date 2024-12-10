@@ -225,34 +225,38 @@ Garantizar que:
 
 pipeline {
     agent any
+
     environment {
-        SONAR_SCANNER_HOME = tool 'SonarQube Scanner'  // Nombre de la herramienta configurada en Jenkins
-                }
-    stages {    
+        SONAR_SCANNER_HOME = tool 'SonarQube Scanner' // Nombre de la herramienta configurada en Jenkins
+    }
+
+    stages {
         stage('Clonar Proyecto') {
             steps {
                 git branch: 'main', url: 'https://github.com/JesusCondor16/VerificacionYValidacion'
-                  }
+            }
         }
-        stage("SonarQube Analysis") {
+
+        stage('SonarQube Analysis') {
             steps {
                 bat """
-                    "%SONAR_SCANNER_HOME%\\bin\\sonar-scanner.bat" ^
-                    -Dsonar.host.url=http://localhost:9000 ^
-                    -Dsonar.token=sqp_e8745cd3a94c801d500c6a31e85fd0cc5b5a8ce3 ^
-                    -Dsonar.projectKey=stylehub ^
-                    -Dsonar.projectName=stylehub ^
-                    -Dsonar.sources=. ^
-                    -Dsonar.exclusions=/node_modules/,/build/** ^
-                    -Dsonar.javascript.lcov.reportPaths=coverage/lcov-report/index.html ^
-                    -Dsonar.html.sourceDirs=src ^
-                    -Dsonar.css.sourceDirs=src ^
-                    -Dsonar.javascript.sourceDirs=src
+                "%SONAR_SCANNER_HOME%\\bin\\sonar-scanner.bat" ^
+                -Dsonar.host.url=http://localhost:9000 ^
+                -Dsonar.token=sqp_e8745cd3a94c801d500c6a31e85fd0cc5b5a8ce3 ^
+                -Dsonar.projectKey=stylehub ^
+                -Dsonar.projectName=stylehub ^
+                -Dsonar.sources=. ^
+                -Dsonar.exclusions=/node_modules/,/build/** ^
+                -Dsonar.javascript.lcov.reportPaths=coverage/lcov-report/index.html ^
+                -Dsonar.html.sourceDirs=src ^
+                -Dsonar.css.sourceDirs=src ^
+                -Dsonar.javascript.sourceDirs=src
                 """
             }
         }
     }
 }
+
 
 
 ## Pruebas Funcionales
