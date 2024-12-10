@@ -1,0 +1,6 @@
+projectKey=verificacion-backend
+serverUrl=http://localhost:9000
+serverVersion=10.6.0.92116
+dashboardUrl=http://localhost:9000/dashboard?id=verificacion-backend
+ceTaskId=39723d15-42e6-4de3-bcb5-89071e1d7ada
+ceTaskUrl=http://localhost:9000/api/ce/task?id=39723d15-42e6-4de3-bcb5-89071e1d7ada

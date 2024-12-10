@@ -66,6 +66,8 @@ cron.schedule("0 * * * *", async () => {
 // Middleware para manejo de errores
 app.use(errorHandler);
 
+export { app };
+
 app.listen(PORT, () => {
   console.log(`Servidor ejecutándose en ${HOST}`);
 });
